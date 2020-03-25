@@ -63,12 +63,6 @@
                               }
                               ?>
                                 </tr>
-
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
                             </tbody>
                         </table>
                     </div>

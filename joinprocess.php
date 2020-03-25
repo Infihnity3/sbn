@@ -10,12 +10,12 @@ include 'conn.php';
 
           echo "<script>alert('You are not a bot.');</script>";
 ?>
-          <script>window.location.href='http://localhost/sbn/voterinformation.php?roomid=<?php echo $rid; ?>';</script>
+          <script>window.location.href='http://localhost/sbn/sbn/voterinformation.php?roomid=<?php echo $rid; ?>';</script>
 <?php
         }
       else{
         echo "<script>alert('You are a bot.');</script>";
-        echo "<script>window.location.href='http://localhost/sbn/homepage.php</script>";
+        echo "<script>window.location.href='http://localhost/sbn/sbn/homepage.php</script>";
 
       }
     }

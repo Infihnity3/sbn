@@ -27,7 +27,7 @@
             <div class="row dashboard">
                 <div class="col-md-8 bordercolor" style="padding: 15px;">
                     <h2>Result of rooms</h2>
-                    <div class="table-responsive tableshadow">
+                    <div class="table-responsive tableshadow">  
                         <table class="table">
                             <thead>
                                 <tr>
@@ -52,7 +52,7 @@
                                       echo "<tr>";
                                       echo "<td>".$row["roomID"]."</td>";
                                   ?>
-                                       <td><a href = "http://localhost/sbn/insideroom.php?resultroomid=<?php echo $row["roomID"]?>"><?php echo $row["roomName"] ?></a> </td>";
+                                       <td><a href = "http://localhost/sbn/sbn/insideroom.php?resultroomid=<?php echo $row["roomID"]?>"><?php echo $row["roomName"] ?></a> </td>";
                                   <?php    echo "<td>".$row["roomtype"]."</td>";
                                       echo "<td>".$row["object1"]."</td>";
                                       echo "<td>".$row["object2"]."</td>";
@@ -75,11 +75,7 @@
                                     echo "</tr>";
                                   }
                               ?>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
+
                             </tbody>
                         </table>
                     </div>
