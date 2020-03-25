@@ -43,7 +43,7 @@
       }
    ?>
    <?php
-$link = "http://localhost/sbn/sbn/onetimelink.php?roomid=$rid";
+    $link = "http://localhost/sbn/sbn/onetimelink.php?roomid=$rid";
 
      if (isset($_POST['invite_btn']))
      {
@@ -53,11 +53,14 @@ $link = "http://localhost/sbn/sbn/onetimelink.php?roomid=$rid";
        $message = "Click the link to join the room. $link.";
        $headers  = 'From: SBN@gmail.com';
 
-       if(mail($to, $subject, $message, $headers))
-        echo "Email sent";
-
-       else
-         phpinfo();
+       if(mail($to, $subject, $message, $headers)){
+       echo "<script>alert('Email successfully sent');</script>";
+       echo "<script>window.location.href='http://localhost/sbn/sbn/userdashboard.php';</script>";
+       }
+       else{
+        echo "<script>alert('Unable to send');</script>";
+        echo "<script>window.location.href='http://localhost/sbn/sbn/userdashboard.php';</script>";
+       }
      }
 
    ?>
@@ -72,7 +75,8 @@ $link = "http://localhost/sbn/sbn/onetimelink.php?roomid=$rid";
             </div>
             <form class="form-inline" method="post" action="#">
                 <div class="form-group"><input class="form-control" type="email" name="voteremail" placeholder="Voter's Email"></div>
-                <div class="form-group"><a class="btn btn-primary" role="button" href="userroomlist.php">Back</a><button class="btn btn-primary" type="submit" style="margin-left: 10px; name="invite_btn">Send</button></div>
+                <div class="form-group"><a class="btn btn-primary" role="button" href="userroomlist.php">Back</a>
+                <button class="btn btn-primary" type="submit" style="margin-left: 10px;" name="invite_btn">Send</button></div>
             </form>
         </div>
     </div>
