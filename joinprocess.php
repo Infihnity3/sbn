@@ -42,7 +42,7 @@ include 'conn.php';
          echo "<script>alert('Successfully joined the room');</script>";
 
          ?>
-         <script>window.location.href='http://localhost/sbn/insideroom.php?resultroomid=<?php echo $_POST['roomid']; ?>';</script>
+         <script>window.location.href='http://localhost/sbn/sbn/insideroom.php?resultroomid=<?php echo $_POST['roomid']; ?>';</script>
          <?php
         }
        }

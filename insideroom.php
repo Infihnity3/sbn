@@ -83,7 +83,7 @@
               <?php
               if (isset($_SESSION['role']))
                 {
-                  echo '<a class="btn btn-primary" type="button" href="http://localhost/sbn/userdashboard.php">Back</a>';
+                  echo '<a class="btn btn-primary" type="button" href="http://localhost/sbn/sbn/userdashboard.php">Back</a>';
                 }
                ?>
                 <div class="col-md-12">

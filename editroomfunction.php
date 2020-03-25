@@ -23,12 +23,12 @@
     if (mysqli_query($conn, $sql))
     {
       echo "<script>alert('Record updated successfully');</script>";
-      echo "<script>window.location.href='http://localhost/sbn/userroomlist.php';</script>";
+      echo "<script>window.location.href='http://localhost/sbn/sbn/userroomlist.php';</script>";
     }
     else
     {
       echo "<script>alert('Something went wrong. Pls ask for contact the person who created this PHP');</script>";
-      echo "<script>window.location.href='http://localhost/sbn/userroomlist.php';</script>";
+      echo "<script>window.location.href='http://localhost/sbn/sbn/userroomlist.php';</script>";
     }
   }
 

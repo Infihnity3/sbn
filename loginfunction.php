@@ -39,12 +39,12 @@
       }
       if($_SESSION['role']==="1"){
           echo "<script>alert('Welcome! ".$_SESSION['name']."');</script>";
-          echo "<script>window.location.href='http://localhost/sbn/admindashboard.php';</script>";
+          echo "<script>window.location.href='http://localhost/sbn/sbn/admindashboard.php';</script>";
       }
       else if($_SESSION['role']==="2")
       {
           echo "<script>alert('Welcome back! ".$_SESSION['name']."');</script>";
-          echo "<script>window.location.href='http://localhost/sbn/userdashboard.php';</script>";
+          echo "<script>window.location.href='http://localhost/sbn/sbn/userdashboard.php';</script>";
       }
 
    }

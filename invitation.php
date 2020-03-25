@@ -43,7 +43,7 @@
       }
    ?>
    <?php
-$link = "http://localhost/sbn/onetimelink.php?roomid=$rid";
+$link = "http://localhost/sbn/sbn/onetimelink.php?roomid=$rid";
 
      if (isset($_POST['invite_btn']))
      {

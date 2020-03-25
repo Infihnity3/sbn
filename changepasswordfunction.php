@@ -15,11 +15,11 @@ if (isset($_POST['changepassword_btn']))
           }
         else{
           echo "<script>alert('New password and repeated new password does not match') window.location.href='http://localhost/sbn/userdashboard.php';</script>";
-          echo "<script>window.location.href='http://localhost/sbn/userdashboard.php';</script>";
+          echo "<script>window.location.href='http://localhost/sbn/sbn/userdashboard.php';</script>";
             }
   }
   else{
       echo "<script>alert('Current password is incorrect');</script>";
-      echo "<script>window.location.href='http://localhost/sbn/userdashboard.php';</script>";
+      echo "<script>window.location.href='http://localhost/sbn/sbn/userdashboard.php';</script>";
       }
 ?>
