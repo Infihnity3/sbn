@@ -43,14 +43,29 @@
       }
    ?>
    <?php
-    $link = "http://localhost/sbn/sbn/onetimelink.php?roomid=$rid";
 
      if (isset($_POST['invite_btn']))
      {
+    $voteremail = $_POST['voteremail'];
+    $token = sha1(uniqid($voteremail, true));
+    $query = $conn->prepare("INSERT INTO onetimelink (token, voteremail, tstamp) VALUES (?,? ,? )");
+    $query->execute(
+      array(
+          $voteremail,
+          $token,
+          $_SERVER["REQUEST_TIME"]
+      )
+    );
+
+
+
+    $link = "localhost/sbn/sbn/onetimelink.php?token=$token";
+
+
 
        $to = $_POST['voteremail'];
        $subject = 'Invitation';
-       $message = "Click the link to join the room. $link.";
+       $message = "Click the link to join the room. $link";
        $headers  = 'From: SBN@gmail.com';
 
        if(mail($to, $subject, $message, $headers)){
@@ -69,9 +84,6 @@
             <div class="intro">
                 <h2 class="text-center">Invitation</h2>
                 <p class="text-justify">Room name: <?php echo $roomname; ?><br>Room requirement: <?php echo $roomrequirement; ?><br><?php echo $roomobject1; ?> or <?php echo $roomobject2; ?><br></p>
-                <?php
-                echo $link;
-                 ?>
             </div>
             <form class="form-inline" method="post" action="#">
                 <div class="form-group"><input class="form-control" type="email" name="voteremail" placeholder="Voter's Email"></div>
