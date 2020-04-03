@@ -28,8 +28,8 @@
                     <div class="col-sm-6 col-md-3 item">
                         <h3>Services</h3>
                         <ul>
-                            <li><a href="#"><br>Hosting room<br></a></li>
-                            <li><a href="#">Online voting<br></a></li>
+                            <li><a href="login.php"><br>Hosting room<br></a></li>
+                            <li><a href="rooms.php">Online voting<br></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3 item">
