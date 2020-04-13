@@ -31,33 +31,33 @@
                     <form  method="post" action="addadmin.php" style="background-repeat: no-repeat;background-size: auto;">
                         <h3 class="text-center" style="color: rgb(237,237,237);">Add Admin</h3>
                         <div class="form-group text-left">
-                            <input class="form-control" type="text" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminname" placeholder="Fullname">
+                            <input class="form-control" type="text" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminname" placeholder="Fullname" required>
                         </div>
                         <div class="form-group text-left">
-                            <input class="form-control" type="text" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminic" placeholder="IC Number"></div>
+                            <input class="form-control" type="text" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminic" placeholder="IC Number" required></div>
                         <div class="form-group">
-                        <select class="form-control" required="" style="width: 300px;margin-left: 230px;" name="admingender">
-                            <option value="None">Choose your gender</option>
+                        <select class="form-control" style="width: 300px;margin-left: 230px;" name="admingender" required>
+                            <option value="">Choose your Gender</option>
                             <option value="1">Male</option>
                             <option value="2">Female</option>
                         </select>
                         </div>
                         <div class="form-group">
-                            <h5 style="margin-left: 230px;width: 300px;">Date of birth</h5><input class="form-control" type="date" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="admindob"></div>
+                            <h5 style="margin-left: 230px;width: 300px;">Date of birth</h5><input class="form-control" type="date" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="admindob" required></div>
                 <div class="form-group">
-                    <input class="form-control" type="tel" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminphone" placeholder="012-3456789">
+                    <input class="form-control" type="tel" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminphone" placeholder="012-3456789" required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminaddress" placeholder="Address"></textarea>
+                    <textarea class="form-control" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminaddress" placeholder="Address" required></textarea>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="email" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminemail" placeholder="Email">
+                    <input class="form-control" type="email" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminemail" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminpassword1" placeholder="Password">
+                    <input class="form-control" type="password" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminpassword1" placeholder="Password" required> 
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminpassword2" placeholder="Password (Repeat)">
+                    <input class="form-control" type="password" style="width: 300px;margin-left: 230px;background-color: rgb(247,249,252);" name="adminpassword2" placeholder="Password (Repeat)" required>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary" type="submit" style="margin-left: 230px;width: 300px;">Add</button>

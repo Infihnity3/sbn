@@ -8,7 +8,9 @@ if (isset($_POST['changepassword_btn']))
    ($_POST["currentpassword"] == $_SESSION['password']);
     if ($_POST["newpassword"] == $_POST["newpassword2"])
           {
-            $changepasswordsql = "UPDATE adminhost set password='".$_POST["newpassword"]."' WHERE ID='".$_POST["hostid"]."'";
+            $password = $_POST["newpassword"];
+
+            $changepasswordsql = "UPDATE adminhost set password='".md5($password)."' WHERE ID='".$_POST["hostid"]."'";
             $passwordresult = mysqli_query($conn, $changepasswordsql);
             echo "<script>alert('Password changed successfully');</script>";
             echo "<script>window.location.href='http://localhost/sbn/sbn/userdashboard.php';</script>";

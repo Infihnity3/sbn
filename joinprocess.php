@@ -15,12 +15,13 @@ include 'conn.php';
         }
       else{
         echo "<script>alert('You are a bot.');</script>";
-        echo "<script>window.location.href='http://localhost/sbn/sbn/homepage.php</script>";
-
+?>
+        <script>window.location.href='http://localhost/sbn/sbn/homepage.php'</script>;
+<?php
       }
     }
- ?>
- <?php
+ 
+ 
    if (isset($_POST['toroom_btn']))
      {
        $checkIC = mysqli_query($conn,"SELECT * FROM voter WHERE VoterIC = '".$_POST['voteric']."' AND roomID = '".$_POST['roomid']."'");

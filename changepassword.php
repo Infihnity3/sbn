@@ -44,9 +44,9 @@
             <form method="post" action="changepasswordfunction.php">
                 <h2 class="text-center"><strong>Change Password</strong></h2>
                 <div class="form-group"><input class="form-control" type="hidden" name="hostid" value="<?php echo $hostid ?>" placeholder="ID" required></div>
-                <div class="form-group"><input class="form-control" type="password" name="currentpassword" placeholder="Current Password"></div>
-                <div class="form-group"><input class="form-control" type="password" name="newpassword" placeholder="New Password"></div>
-                <div class="form-group"><input class="form-control" type="password" name="newpassword2" placeholder="New Password (Repeat)"></div>
+                <div class="form-group"><input class="form-control" type="password" name="currentpassword" placeholder="Current Password" required></div>
+                <div class="form-group"><input class="form-control" type="password" name="newpassword" placeholder="New Password" required></div>
+                <div class="form-group"><input class="form-control" type="password" name="newpassword2" placeholder="New Password (Repeat)" required></div>
                 <div class="form-group" style="margin-bottom: 0px;"><a class="btn btn-primary" type="button" style="margin: 12px;margin-left: 50px;" href="userdashboard.php">Back</a>
                   <button class="btn btn-primary" type="submit" style="margin-top: 12px;margin-right: 12px;margin-bottom: 12px;margin-left: 12px;" name="changepassword_btn">Save edit</button></div>
             </form>

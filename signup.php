@@ -28,7 +28,12 @@
                 <h2 class="text-center"><strong>Create</strong> an account.</h2>
                 <div class="form-group"><input class="form-control" type="text" name="hostname" placeholder="Fullname" required></div>
                 <div class="form-group"><input class="form-control" type="text" name="hostic" placeholder="IC Number" required></div>
-                <div class="form-group"><select class="form-control" name="hostgender" required><option value="">Choose your Gender</option><option value="1">Male</option><option value="2">Female</option></select></div>
+                <div class="form-group"><select class="form-control" name="hostgender" required>
+                <option value="">Choose your Gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                </select>
+                </div>
                 <div class="form-group">
                     <h6 style="margin-left: 10px;">Date of birth</h6><input class="form-control" type="date" name="hostdob" required></div>
                 <div class="form-group"><input class="form-control" type="tel" name="hosttelephone" placeholder="012-3456789" required></div>
