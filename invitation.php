@@ -48,25 +48,23 @@
      {
     $voteremail = $_POST['voteremail'];
     $token = sha1(uniqid($voteremail, true));
-    $query = $conn->prepare("INSERT INTO onetimelink (token, voteremail, tstamp) VALUES (?,? ,? )");
-    $query->execute(
-      array(
-          $voteremail,
-          $token,
-          $_SERVER["REQUEST_TIME"]
-      )
-    );
+    $query = $conn->prepare("INSERT INTO one_time_link (token, voteremail, tstamp) VALUES (?,? ,? )");
+    $query -> bind_param("sss", $token, $voteremail, $_SERVER["REQUEST_TIME"]);
+    $query->execute();
 
 
 
     $link = "localhost/sbn/sbn/onetimelink.php?token=$token";
+    
 
-
-
-       $to = $_POST['voteremail'];
-       $subject = 'Invitation';
-       $message = "Click the link to join the room. $link";
-       $headers  = 'From: SBN@gmail.com';
+        function clickable($link){
+          return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $link);
+          }
+        
+        $to = $_POST['voteremail'];
+        $subject = 'Invitation';
+        $message = "Click the ".clickable($link)." to join the room.";
+        $headers  = 'From: SBN@gmail.com';
 
        if(mail($to, $subject, $message, $headers)){
        echo "<script>alert('Email successfully sent');</script>";

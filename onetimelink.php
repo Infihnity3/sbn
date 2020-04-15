@@ -10,7 +10,8 @@ if (isset($_GET["token"]) && preg_match('/^[0-9A-F]{40}$/i', $_GET["token"])) {
 
 // verify token
 $query = $conn->prepare("SELECT voteremail, tstamp FROM onetimelink WHERE token = ?");
-$query->execute(array($token));
+$query -> bind_param("s", $token);
+$query->execute();
 $row = $query->fetch(PDO::FETCH_ASSOC);
 $query->closeCursor();
 
@@ -22,7 +23,7 @@ else {
 }
 
 // do one-time action here, like activating a user account
-// ...
+<script>window.location.href='http://localhost/sbn/sbn/voterinformation.php?roomid=<?php echo $rid; ?>';</script>
 
 // delete token so it can't be used again
 $query = $db->prepare(
