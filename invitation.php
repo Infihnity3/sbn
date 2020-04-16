@@ -48,8 +48,8 @@
      {
     $voteremail = $_POST['voteremail'];
     $token = sha1(uniqid($voteremail, true));
-    $query = $conn->prepare("INSERT INTO one_time_link (token, voteremail, tstamp) VALUES (?,? ,? )");
-    $query -> bind_param("sss", $token, $voteremail, $_SERVER["REQUEST_TIME"]);
+    $query = $conn->prepare("INSERT INTO one_time_link (token,roomID, voteremail, tstamp ) VALUES (?,? ,?, ? )");
+    $query -> bind_param("ssss", $token, $roomid, $voteremail, $_SERVER["REQUEST_TIME"] );
     $query->execute();
 
 

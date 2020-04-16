@@ -1,7 +1,7 @@
 <?php
 include "conn.php";
 // retrieve token
-
+session_start();
 if (isset($_GET["token"]) && preg_match('/^[0-9A-F]{40}$/i', $_GET["token"])) {
     $token = $_GET["token"];
   } else {
@@ -9,11 +9,11 @@ if (isset($_GET["token"]) && preg_match('/^[0-9A-F]{40}$/i', $_GET["token"])) {
   }
 
 // verify token
-$query = $conn->prepare("SELECT voteremail, tstamp FROM onetimelink WHERE token = ?");
+$query = $conn->prepare("SELECT roomID, voteremail, tstamp FROM one_time_link WHERE token = ?");
 $query -> bind_param("s", $token);
 $query->execute();
-$row = $query->fetch(PDO::FETCH_ASSOC);
-$query->closeCursor();
+$row = $query->get_result()->fetch_assoc();
+
 
 if ($row) {
     extract($row);
@@ -22,29 +22,29 @@ else {
     throw new Exception("Valid token not provided.");
 }
 
+// // delete token so it can't be used again
+// $query = $conn->prepare("DELETE * FROM one_time_link WHERE token = ?");
+// $query -> bind_param("s", $token);
+// $query->execute();
+
+// //time in seconds
+// $time = 6000;
+
+// // Check if link has expired
+// if ($_SERVER["REQUEST_TIME"] - $tstamp > $time) {
+//     throw new Exception("Token has expired.");
+// }
 // do one-time action here, like activating a user account
-<script>window.location.href='http://localhost/sbn/sbn/voterinformation.php?roomid=<?php echo $rid; ?>';</script>
+$sql = "SELECT roomID FROM room as r join one_time_link as o on r/.roomID = o/.roomID where token = $token";
+$result = mysqli_query($conn, $sql);
+$roomid = $row['roomID'];
 
-// delete token so it can't be used again
-$query = $db->prepare(
-    "DELETE FROM onetimelink WHERE voteremail = ? AND token = ? AND tstamp = ?;");
-
-$query->execute(
-    array(
-        $voteremail,
-        $token,
-        $tstamp
-    )
-);
-
-
-// 1 day measured in seconds = 60 seconds * 60 minutes * 24 hours
-$delta = 86400;
-
-// Check to see if link has expired
-if ($_SERVER["REQUEST_TIME"] - $tstamp > $delta) {
-    throw new Exception("Token has expired.");
-}
-// do one-time action here, like activating a user account
+// if(mysqli_num_rows($result) == $token){
+//         {
+        //   if ($row = mysqli_fetch_array($result))
+        //   $roomid = $row['roomID'];
+        // }
+    //   }
 
 ?>
+<script>window.location.href='http://localhost/sbn/sbn/voterinformation.php?roomid=<?php echo $roomid; ?>';</script>
