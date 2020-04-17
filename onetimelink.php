@@ -33,7 +33,9 @@ $time = 6000;
 
 // Check if link has expired
 if ($_SERVER["REQUEST_TIME"] - $tstamp > $time) {
-    throw new Exception("Token has expired.");
+    echo "<script>alert('Token has expired! ');</script>";
+    echo "<script>window.location.href='http://localhost/sbn/sbn/homepage.php';</script>";
+}
 }
 // do one-time action here, like activating a user account
 $sql = "SELECT roomID FROM room as r join one_time_link as o on r/.roomID = o/.roomID where token = $token";
