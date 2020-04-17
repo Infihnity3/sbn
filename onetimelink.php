@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_TIME"] - $tstamp > $time) {
     echo "<script>alert('Token has expired! ');</script>";
     echo "<script>window.location.href='http://localhost/sbn/sbn/homepage.php';</script>";
 }
-}
+
 // do one-time action here, like activating a user account
 $sql = "SELECT roomID FROM room as r join one_time_link as o on r/.roomID = o/.roomID where token = $token";
 $result = mysqli_query($conn, $sql);
