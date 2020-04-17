@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Homepage.php</title>
+    <title>Homepage</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
@@ -27,7 +27,7 @@
             <div class="row dashboard">
                 <div class="col-md-8 bordercolor" style="padding: 15px;">
                     <h2>Result of rooms</h2>
-                    <div class="table-responsive tableshadow">  
+                    <div class="table-responsive tableshadow">
                         <table class="table">
                             <thead>
                                 <tr>
