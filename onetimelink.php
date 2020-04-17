@@ -19,21 +19,22 @@ if ($row) {
     extract($row);
 }
 else {
-    throw new Exception("Valid token not provided.");
+    echo "<script>alert('Token has expired! ');</script>";
+    echo "<script>window.location.href='http://localhost/sbn/sbn/homepage.php';</script>";
 }
 
-// // delete token so it can't be used again
-// $query = $conn->prepare("DELETE * FROM one_time_link WHERE token = ?");
-// $query -> bind_param("s", $token);
-// $query->execute();
+// delete token so it can't be used again
+$query = $conn->prepare("DELETE FROM one_time_link WHERE token = ?");
+$query -> bind_param("s", $token);
+$query -> execute();
 
-// //time in seconds
-// $time = 6000;
+//time in seconds
+$time = 6000;
 
-// // Check if link has expired
-// if ($_SERVER["REQUEST_TIME"] - $tstamp > $time) {
-//     throw new Exception("Token has expired.");
-// }
+// Check if link has expired
+if ($_SERVER["REQUEST_TIME"] - $tstamp > $time) {
+    throw new Exception("Token has expired.");
+}
 // do one-time action here, like activating a user account
 $sql = "SELECT roomID FROM room as r join one_time_link as o on r/.roomID = o/.roomID where token = $token";
 $result = mysqli_query($conn, $sql);
