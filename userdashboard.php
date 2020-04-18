@@ -52,7 +52,7 @@
                                       echo "<tr>";
                                       echo "<td>".$row["roomID"]."</td>";
                                   ?>
-                                       <td><a href = "http://localhost/sbn/sbn/insideroom.php?resultroomid=<?php echo $row["roomID"]?>"><?php echo $row["roomName"] ?></a> </td>";
+                                       <td><a href = "http://localhost/sbn/sbn/insideroom.php?resultroomid=<?php echo $row["roomID"]?>"><?php echo $row["roomName"] ?></a> </td>
                                   <?php    echo "<td>".$row["roomtype"]."</td>";
                                       echo "<td>".$row["object1"]."</td>";
                                       echo "<td>".$row["object2"]."</td>";

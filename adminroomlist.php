@@ -57,11 +57,11 @@
                                       echo "<td>".$rows['object2']."</td>";
                                       ?>
 
-                                      <td><a class="btn btn-primary" role="button" style="margin-top: 0px;margin-right: 0px;margin-left: 5px;" href="deleteroomfunction.php?deleteroom=<?php echo $rows["roomID"] ?>">Delete</a></td>'
+                                      <td><a class="btn btn-primary" role="button" style="margin-top: 0px;margin-right: 0px;margin-left: 5px;" href="deleteroomfunction.php?deleteroom=<?php echo $rows["roomID"] ?>">Delete</a></td>
                                       <?php
                                       echo "</tr>";
-                              }
-                              ?>
+                                    }
+                                    ?>
                                 </tr>
                             </tbody>
                         </table>
