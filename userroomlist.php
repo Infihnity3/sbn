@@ -67,8 +67,8 @@
                                         $total = $row["votesObject1"]+$row["votesObject2"];
                                         echo "<td>".$total."</td>";
                                       ?>
-                                        <td><a class="btn btn-primary" role="button" style="margin-top: 0px;margin-right: 0px;margin-left: 5px;" href="editroom.php?editroom=<?php echo $row["roomID"] ?>">Edit</a></td>'
-                                        <td><a class="btn btn-primary" role="button" style="margin-top: 0px;margin-right: 0px;margin-left: 5px;" href="deleteroomfunction.php?deleteroom=<?php echo $row["roomID"] ?>">Delete</a></td>'
+                                        <td><a class="btn btn-primary" role="button" style="margin-top: 0px;margin-right: 0px;margin-left: 5px;" href="editroom.php?editroom=<?php echo $row["roomID"] ?>">Edit</a></td>
+                                        <td><a class="btn btn-primary" role="button" style="margin-top: 0px;margin-right: 0px;margin-left: 5px;" href="deleteroomfunction.php?deleteroom=<?php echo $row["roomID"] ?>">Delete</a></td>
                                         <td><a class="btn btn-primary" type="button" style="margin-top: 0px;margin-right: 0px;margin-left: 5px;" href="invitation.php?inviteroom=<?php echo $row["roomID"] ?>">Invite</a></td>
                                        <?php
 

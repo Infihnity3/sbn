@@ -29,7 +29,7 @@ $query -> bind_param("s", $token);
 $query -> execute();
 
 //time in seconds
-$time = 6000;
+$time = 300;
 
 // Check if link has expired
 if ($_SERVER["REQUEST_TIME"] - $tstamp > $time) {
