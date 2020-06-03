@@ -64,7 +64,7 @@
         $to = $_POST['voteremail'];
         $subject = 'Invitation';
         $message = "Click the ".clickable($link)." to join the room.";
-        $headers  = 'From: SBN@gmail.com';
+        $headers  = 'From: zackchow0306@gmail.com';
 
        if(mail($to, $subject, $message, $headers)){
        echo "<script>alert('Email successfully sent');</script>";
