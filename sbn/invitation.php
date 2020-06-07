@@ -62,17 +62,17 @@
           }
         
         $to = $_POST['voteremail'];
-        $subject = 'Invitation';
+        $subject = 'Invitation to Vote';
         $message = "Click the ".clickable($link)." to join the room.";
-        $headers  = 'From: zackchow0306@gmail.com';
+        $headers = 'From: zackchow33@gmail.com';
 
-       if(mail($to, $subject, $message, $headers)){
+       if(mail($to, $subject,$message, $headers)){
        echo "<script>alert('Email successfully sent');</script>";
        echo "<script>window.location.href='http://localhost/sbn/sbn/userdashboard.php';</script>";
        }
        else{
-        echo "<script>alert('Unable to send');</script>";
-        echo "<script>window.location.href='http://localhost/sbn/sbn/userdashboard.php';</script>";
+        // echo "<script>alert('Unable to send');</script>";
+        // echo "<script>window.location.href='http://localhost/sbn/sbn/userdashboard.php';</script>";
        }
      }
 
